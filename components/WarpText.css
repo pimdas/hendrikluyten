@@ -1,0 +1,33 @@
+.warp-text {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: inherit;
+}
+
+.warp-text canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.warp-text__fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7%;
+  text-align: center;
+  white-space: pre-line;
+}
+/* Keep real text visible until the WebGL texture is ready. */
+.warp-text{min-height:0;height:1.16em;overflow:visible}
+.warp-text__fallback{justify-content:flex-start;padding:0 8px;text-align:left}
+.warp-text.is-ready .warp-text__fallback{visibility:hidden}
+@media(prefers-reduced-motion:reduce){.warp-text canvas{display:none}.warp-text.is-ready .warp-text__fallback{visibility:visible}}
