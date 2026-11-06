@@ -20,3 +20,12 @@ header .brand{font-size:20px;line-height:1.12}
 @media(max-width:1000px) and (min-width:801px){.hero-copy{width:73%}.street{right:-25%;top:10%;width:100%}}
 @media(max-width:800px){.hero{padding:62px 6% 330px;min-height:740px}.hero-copy{width:100%}.hero-title{font-size:clamp(52px,12.8vw,94px);margin-bottom:24px}.hero-copy>p{max-width:330px}.street{width:115%;right:-20%;top:auto;bottom:-5%;margin:0;opacity:.66}.hero .date{font-size:13px}.hero-title .warp-text{height:1.16em}}
 @media(max-width:420px){.hero{padding-bottom:290px}.street{bottom:-1%;right:-24%;width:126%}}
+/* Fit the complete map to the hero height, even on ultrawide displays. */
+.street{top:40px;bottom:40px;right:-4%;width:min(80%,1300px);height:auto;max-width:none;display:flex;align-items:center;justify-content:center}
+.street img{width:100%;height:100%;max-height:100%;object-fit:contain;object-position:center;flex-shrink:0}
+@media(max-width:1000px) and (min-width:801px){.street{top:60px;bottom:40px;right:-12%;width:90%}}
+@media(max-width:800px){.street{top:auto;bottom:16px;right:-7%;width:110%;height:300px;max-width:none}.street img{object-position:center bottom}}
+@media(min-width:801px) and (prefers-reduced-motion:no-preference){.street{will-change:transform}}
+.street{height:calc(100% - 80px);bottom:auto;right:0}
+@media(max-width:1000px) and (min-width:801px){.street{height:calc(100% - 100px);right:-4%}}
+@media(max-width:800px){.street{top:auto;bottom:16px;right:0;width:100%;height:300px}}
